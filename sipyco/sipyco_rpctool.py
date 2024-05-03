@@ -9,6 +9,7 @@ import pprint
 import inspect
 
 from sipyco.pc_rpc import AutoTarget, Client
+from sipyco.inspect_formatargspec import inspect_formatargspec
 
 
 def get_argparser():
@@ -47,7 +48,7 @@ def list_methods(remote):
         print(doc["docstring"])
         print()
     for name, (argspec, docstring) in sorted(doc["methods"].items()):
-        print(name + inspect.formatargspec(**argspec))
+        print(name + inspect_formatargspec(**argspec))
         if docstring is not None:
             print(textwrap.indent(docstring, "    "))
         print()
