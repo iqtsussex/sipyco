@@ -1,7 +1,7 @@
 {
   description = "Simple Python Communications";
 
-  inputs.nixpkgs.url = github:NixOS/nixpkgs/nixos-25.05;
+  inputs.nixpkgs.url = github:NixOS/nixpkgs/nixos-25.11;
 
   outputs = {
     self,
@@ -49,7 +49,7 @@
     };
     sphinxDeps = with pkgs.python3Packages; [
       sphinx
-      sphinx_rtd_theme
+      sphinx-rtd-theme
       sphinx-argparse
       sphinxcontrib-wavedrom
     ];
