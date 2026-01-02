@@ -54,4 +54,4 @@ def bind_address_from_args(args):
     if args.no_localhost_bind:
         return args.bind
     else:
-        return ["127.0.0.1", "::1"] + args.bind
+        return ["localhost"] + args.bind

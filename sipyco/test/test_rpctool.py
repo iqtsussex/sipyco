@@ -23,7 +23,7 @@ class TestRPCTool(unittest.TestCase):
         asyncio.set_event_loop(self.loop)
 
     async def check_value(self, ssl=False):
-        cmd = [sys.executable, "-m", "sipyco.sipyco_rpctool", "::1", "7777"]
+        cmd = [sys.executable, "-m", "sipyco.sipyco_rpctool", "localhost", "7777"]
         if ssl:
             cmd.extend(["--ssl", self.ssl_certs["client_cert"],
                                  self.ssl_certs["client_key"],
@@ -38,7 +38,7 @@ class TestRPCTool(unittest.TestCase):
     async def do_test(self, ssl=False):
         ssl_config = create_ssl_config("server", self.ssl_certs) if ssl else None
         server = Server({"target": Target()})
-        await server.start("::1", 7777, ssl_config)
+        await server.start("localhost", 7777, ssl_config)
         await self.check_value(ssl)
         await server.stop()
 

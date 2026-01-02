@@ -7,7 +7,7 @@ from sipyco import logs
 from sipyco.test.ssl_certs import create_ssl_certs, create_ssl_config
 
 
-test_address = "::1"
+test_address = "localhost"
 test_port = 7777
 test_messages = [
     ("This is a debug message", logging.DEBUG),

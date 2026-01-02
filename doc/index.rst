@@ -101,7 +101,7 @@ to call remote functions of an RPC server. For secure connections, see `SSL Setu
         The following example will call the ``set_attenuation`` method of the
         Lda controller with the argument ``5``::
 
-            $ sipyco_rpctool ::1 3253 call -t lda set_attenuation 5
+            $ sipyco_rpctool localhost 3253 call -t lda set_attenuation 5
 
         In general, to call a function named ``f`` with N arguments named
         respectively ``x1, x2, ..., xN`` you can do::
@@ -113,13 +113,13 @@ to call remote functions of an RPC server. For secure connections, see `SSL Setu
         as ``np``. Beware to use quotes to separate arguments which use spaces::
 
             $ sipyco_rpctool hostname port call -t target f '3 * 4 + 2' True '[1, 2]'
-            $ sipyco_rpctool ::1 3256 call load_sample_values 'np.array([1.0, 2.0], dtype=float)'
+            $ sipyco_rpctool localhost 3256 call load_sample_values 'np.array([1.0, 2.0], dtype=float)'
 
         If the called function has a return value, it will get printed to
         the standard output if the value is not None like in the standard
         python interactive console::
 
-            $ sipyco_rpctool ::1 3253 call get_attenuation
+            $ sipyco_rpctool localhost 3253 call get_attenuation
             5.0
 
 Command-line details:
