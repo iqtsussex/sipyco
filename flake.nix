@@ -16,7 +16,7 @@
       build-system = [ pkgs.python3Packages.setuptools ];
       propagatedBuildInputs = with pkgs.python3Packages; [pybase64 numpy];
       nativeCheckInputs = [pkgs.openssl];
-      checkPhase = "python -m unittest discover sipyco.test";
+      checkPhase = "python -m unittest discover sipyco.test -v";
     };
     sipyco-aarch64 = with nixpkgs.legacyPackages.aarch64-linux;
       python3Packages.buildPythonPackage {
