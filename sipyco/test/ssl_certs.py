@@ -12,7 +12,8 @@ def create_ssl_certs(cert_dir):
             "-nodes",
             "-out", os.path.join(cert_dir, f"{cert_name}.pem"),
             "-sha256",
-            "-subj", "/"
+            "-subj", "/",
+            "-quiet"
         ], check=True)
 
     certs = {
